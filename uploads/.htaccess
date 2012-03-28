@@ -1,0 +1,7 @@
+# No directory listings in here!
+Options All -Indexes
+
+# Force downloading files in here, no running
+<Files ~ "(?<!\.pdf)(?<!\.png)(?<!\.jpg)(?<!\.gif)(?<!\.tif)(?<!\.tiff)$">
+  Header set Content-Disposition attachment
+</Files>

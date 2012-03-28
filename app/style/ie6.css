@@ -1,0 +1,6 @@
+/* Uncomment the below to do an IE PNG fix -- also include the javascript file
+** You can also modify what elements it is applied to
+img, div, a { 
+	behavior:url(http://api.devcsd.com/js/iepngfix/iepngfix.htc);
+} 
+*/

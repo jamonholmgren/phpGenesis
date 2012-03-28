@@ -1,0 +1,1 @@
+<? die("Direct access disabled.");  ?>

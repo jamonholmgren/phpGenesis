@@ -1,0 +1,37 @@
+@charset "utf-8";
+/* keep vertical scroll bar in place to prevent "jumping" */
+html {
+	height:100%;
+	margin-bottom:1px;
+	padding-bottom:1px;
+}
+/* For modern browsers */
+.cleared:before,
+.cleared:after {
+	content:"";
+	display:table;
+}
+.cleared:after {
+	clear:both;
+}
+.cleared { /* For IE 6/7 (trigger hasLayout) */
+	zoom:1;
+}
+
+/* Selection text color */
+::-moz-selection{ background: #B9B5AA; color:#fff; text-shadow: none; }
+::selection { background:#B9B5AA; color:#fff; text-shadow: none; }
+
+/*
+@font-face {
+	src: 
+		local("font name"),
+		local('fontName'),
+		url(/font/font.ttf) format('truetype'),
+		url(/font/font.otf) format('opentype');
+	src: url(/font/font.eot); // IE - Must be last SRC to work
+}
+body {
+	font-family: "font name";
+}
+*/

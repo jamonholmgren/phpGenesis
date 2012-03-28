@@ -1,0 +1,28 @@
+# No directory listings
+Options All -Indexes
+
+<IfModule mod_rewrite.c>
+   Options +FollowSymLinks
+	RewriteEngine on
+	RewriteBase /
+	
+	#This will stop processing if it's images    
+	#RewriteCond %{REQUEST_URI} !^/pages/.*$	
+	#RewriteCond %{REQUEST_URI} ^(.*css|jpe?g|gif|png|js)$	
+	#RewriteRule ^(.*)$ /pages/$1 [L] 
+	
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^(.*)$ index.php?/$1 [QSA,L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    # If we don't have mod_rewrite installed, all 404's
+    # can be sent to index.php, and everything works as normal.
+
+    ErrorDocument 404 /index.php
+</IfModule> 
+<Files *.log>
+	Order allow,deny
+	Deny from all
+</Files>
