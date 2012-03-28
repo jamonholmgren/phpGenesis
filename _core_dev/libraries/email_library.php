@@ -15,7 +15,7 @@
  *	@package phpGenesis
  */
 
-// email_library last edited 12/11/2009 by Jamon Holmgren
+// email_library last edited 03/28/2011 by Silas J. Matson
 // TO-DO
 //	See above
 		
@@ -65,11 +65,13 @@
 	} // end email alias
 	
 	/**
-	 *	Uses the thirdparty plugin class "PHPMailer" to send emails. Can handle attachmetns in the
-	 *	options array by adding a filename (or array of filenames) to "attachment".
+	 *	Uses the thirdparty plugin class "PHPMailer" to send emails. 
+	 *	Can handle carbon copies in the options array (Must use smtp)
+	 *	Can handle attachments in the options array by adding a filename 
+	 *	(or array of filenames) to "attachment".
 	 *
 	 *	Usage example: 
-	 *	phpmailer_send('test@example.com', 'Sweet attachment', 'Check it out', 'me@example.com', array('attachment' => 'filename.jpg'));
+	 *	phpmailer_send('test@example.com', 'Sweet attachment', 'Check it out', 'me@example.com', array('attachment' => 'filename.jpg', 'cc' => 'you@example.com'));
 	 *
 	 **/
 	if(!function_exists("phpmailer_send")) {
@@ -91,6 +93,25 @@
 			$mail->Subject = $subject;
 			$mail->MsgHTML($message);
 			
+			if(isset($options['bcc'])){
+				if(is_array($options['bcc'])) {
+					foreach($options as $bc) {
+						$mail->AddBCC($bc, '');
+					}
+				} else {
+					$mail->AddBCC($options['bcc'], "");
+				}
+			}
+			
+			if(isset($options['cc'])){
+				if(is_array($options['cc'])) {
+					foreach($options as $cc) {
+						$mail->AddCC($cc, '');
+					}
+				} else {
+					$mail->AddCC($options['cc'], "");
+				}
+			}
 			
 			if(isset($options['attachment'])) {
 				if(is_array($options['attachment'])) {
