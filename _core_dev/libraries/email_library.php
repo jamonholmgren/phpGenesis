@@ -47,9 +47,9 @@
 			
 			if(is_array($to)) $to = implode(",", $to);
 			
-			$params = "Return-Path: {$from}\r\n";
+			$headers .= "Return-Path: {$from}\r\n";
 			
-			return mail($to, $subject, $message, $headers, $params);
+			return mail($to, $subject, $message, $headers);
 		}
 	} // end email_send
 	

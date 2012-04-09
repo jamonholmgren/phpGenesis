@@ -11,6 +11,7 @@
 	define("CORE_VERSION", "2.4.2" . $beta);
 	
 	// CHANGELOG: Add a one-line version note below here on each release. Short and sweet.
+	// Version 2.4.2: Bugfix to allow email library to work on Avlux servers
 	// Version 2.4.1: Bugfix to use cookies in addition to sessions for Social User Library to prevent CSRF errors
 	// Version 2.4.0: Added a new forms library
 	// Version 2.3.5: Maintenance version for CE App
