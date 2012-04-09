@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>Net_Whois</name>
+ <channel>pear.php.net</channel>
+ <summary>The PEAR::Net_Whois class provides a tool to query internet domain name and network number directory services</summary>
+ <description>The PEAR::Net_Whois looks up records in the databases maintained by several Network Information Centers (NICs).</description>
+ <lead>
+  <name>Seamus Venasse</name>
+  <user>svenasse</user>
+  <email>svenasse@polaris.ca</email>
+  <active>yes</active>
+ </lead>
+ <lead>
+  <name>Ken Guest</name>
+  <user>kguest</user>
+  <email>ken@linux.ie</email>
+  <active>yes</active>
+ </lead>
+ <date>2009-11-06</date>
+ <time>10:45:24</time>
+ <version>
+  <release>1.0.2</release>
+  <api>3</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.php.net/license">PHP</license>
+ <notes>
+Request #16763 authorative info only: do not have server names included in output
+ </notes>
+ <contents>
+  <dir baseinstalldir="Net" name="/">
+   <file baseinstalldir="Net" md5sum="4aa1f7b1fb36049e98c1eb3d1d331207" name="tests/test.php" role="test" />
+   <file baseinstalldir="Net" md5sum="46039d4a00b89c0d23c55791ca203b47" name="tests/test2.php" role="test" />
+   <file baseinstalldir="Net" md5sum="90a7f4329228c40fa64842602495070e" name="tests/test6348.php" role="test" />
+   <file baseinstalldir="Net" md5sum="1a266e27614dd9349189655dfbcdc657" name="tests/test_authorative.php" role="test" />
+   <file baseinstalldir="Net" md5sum="a78af900380b31c5c0041acc6d9f526e" name="tests/test_mult.php" role="test" />
+   <file baseinstalldir="Net" md5sum="1a3cabbf07cbfaef5113a0704c55162a" name="Whois.php" role="php" />
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>4.0.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.0b1</min>
+   </pearinstaller>
+   <package>
+    <name>Net_Socket</name>
+    <channel>pear.php.net</channel>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>1.0</release>
+    <api>1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2008-12-20</date>
+   <license uri="http://www.php.net/license">PHP</license>
+   <notes>
+Bug #579 Net_Whois fails
+Bug #1301 Not &quot;optimized&quot; in a call to PEAR_ERROR
+Bug #1304 Syntax error in line 165
+Bug #2052 Syntax error in line 248 &amp; 249
+Bug #2053 Syntax error in line 264 	 
+Bug #4859 DB_FETCHMODE_ASSOC and CaseSensitiveField
+Bug #6348 Using = before domain name hangs ?
+Bug #14799  Improve PHPCS results
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.1</release>
+    <api>1.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2008-12-20</date>
+   <license uri="http://www.php.net/license">PHP</license>
+   <notes>
+Bug #579 Net_Whois fails
+Bug #1301 Not &quot;optimized&quot; in a call to PEAR_ERROR
+Bug #1304 Syntax error in line 165
+Bug #2052 Syntax error in line 248 &amp; 249
+Bug #2053 Syntax error in line 264 	 
+Bug #4859 DB_FETCHMODE_ASSOC and CaseSensitiveField
+Bug #6348 Using = before domain name hangs ?
+Bug #14799  Improve PHPCS results
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.2</release>
+    <api>3</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2009-11-06</date>
+   <license uri="http://www.php.net/license">PHP</license>
+   <notes>
+Request #16763 authorative info only: do not have server names included in output
+   </notes>
+  </release>
+ </changelog>
+</package>

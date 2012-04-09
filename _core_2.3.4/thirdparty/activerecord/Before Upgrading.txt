@@ -1,0 +1,6 @@
+Model.php
+
+Change lines around 827 to:
+		$this->__new_record = false;
+		$this->invoke_callback('after_create',false);
+		return true;

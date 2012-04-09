@@ -1,0 +1,90 @@
+
+SET FOREIGN_KEY_CHECKS=0;
+-- ----------------------------
+-- Table structure for `users`
+-- ----------------------------
+DROP TABLE IF EXISTS `users`;
+CREATE TABLE `users` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(40) NOT NULL,
+  `salt` varchar(40) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `display_name` varchar(50) NOT NULL,
+  `is_admin` tinyint(3) unsigned NOT NULL,
+  `level` varchar(1024) DEFAULT NULL,
+  `last_login` datetime DEFAULT NULL,
+  `last_active` datetime DEFAULT NULL,
+  `last_ip` int(11) unsigned DEFAULT NULL,
+  `banned` tinyint(4) unsigned NOT NULL DEFAULT '0',
+  `newpass_key` varchar(40) DEFAULT NULL,
+  `newpass_time` datetime DEFAULT NULL,
+  `created` datetime NOT NULL,
+  `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=102228 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Table structure for `user_autologin`
+-- ----------------------------
+DROP TABLE IF EXISTS `user_autologin`;
+CREATE TABLE `user_autologin` (
+  `key_id` char(40) COLLATE utf8_bin NOT NULL,
+  `user_id` int(11) unsigned NOT NULL DEFAULT '0',
+  `user_agent` varchar(150) COLLATE utf8_bin NOT NULL,
+  `last_ip` int(10) unsigned NOT NULL,
+  `last_login` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`key_id`,`user_id`),
+  KEY `FK_user_autologin_users` (`user_id`),
+  CONSTRAINT `user_autologin_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Table structure for `user_login_attempts`
+-- ----------------------------
+DROP TABLE IF EXISTS `user_login_attempts`;
+CREATE TABLE `user_login_attempts` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `moniker` varchar(100) COLLATE utf8_bin NOT NULL,
+  `ip` int(11) unsigned NOT NULL,
+  `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=131 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- ----------------------------
+-- Table structure for `user_profiles`
+-- ----------------------------
+DROP TABLE IF EXISTS `user_profiles`;
+CREATE TABLE `user_profiles` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) unsigned NOT NULL,
+  `phone` varchar(40) DEFAULT NULL,
+  `address1` varchar(100) DEFAULT NULL,
+  `address2` varchar(100) DEFAULT NULL,
+  `city` varchar(40) DEFAULT NULL,
+  `state` varchar(2) DEFAULT NULL,
+  `zip` varchar(12) DEFAULT NULL,
+  `profile_complete` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK_user_profiles_users` (`user_id`),
+  CONSTRAINT `user_profiles_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 CHECKSUM=1 DELAY_KEY_WRITE=1 ROW_FORMAT=DYNAMIC;
+
+-- ----------------------------
+-- Table structure for `user_temp`
+-- ----------------------------
+DROP TABLE IF EXISTS `user_temp`;
+CREATE TABLE `user_temp` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(25) COLLATE utf8_bin NOT NULL,
+  `password` varchar(40) COLLATE utf8_bin NOT NULL,
+  `salt` varchar(40) COLLATE utf8_bin NOT NULL,
+  `email` varchar(100) COLLATE utf8_bin NOT NULL,
+  `display_name` varchar(50) COLLATE utf8_bin DEFAULT NULL,
+  `activation_key` varchar(50) COLLATE utf8_bin NOT NULL,
+  `last_ip` varchar(40) COLLATE utf8_bin NOT NULL,
+  `created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
