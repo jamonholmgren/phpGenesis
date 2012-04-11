@@ -15,7 +15,7 @@
  *	@package phpGenesis
  */
 
-// email_library last edited 03/28/2011 by Silas J. Matson
+// email_library last edited 12/11/2009 by Jamon Holmgren
 // TO-DO
 //	See above
 		
@@ -65,53 +65,65 @@
 	} // end email alias
 	
 	/**
-	 *	Uses the thirdparty plugin class "PHPMailer" to send emails. 
-	 *	Can handle carbon copies in the options array (Must use smtp)
-	 *	Can handle attachments in the options array by adding a filename 
-	 *	(or array of filenames) to "attachment".
+	 *	Uses the thirdparty plugin class "PHPMailer" to send emails. Can handle attachmetns in the
+	 *	options array by adding a filename (or array of filenames) to "attachment".
 	 *
 	 *	Usage example: 
-	 *	phpmailer_send('test@example.com', 'Sweet attachment', 'Check it out', 'me@example.com', array('attachment' => 'filename.jpg', 'cc' => 'you@example.com'));
+	 *	phpmailer_send('test@example.com', 'Sweet attachment', 'Check it out', 'me@example.com', array('attachment' => 'filename.jpg'));
 	 *
 	 **/
 	if(!function_exists("phpmailer_send")) {
-		function phpmailer_send($to, $subject, $message, $from, $options = array()) {
+		function phpmailer_send($to, $subject, $message, $from = NULL, $options = array()) {
 			if(!thirdparty_plugin_is_loaded("phpmailer/class.phpmailer.php")) {
 				// Kevin make sure this works.
 				load_thirdparty_plugin("phpmailer/class.phpmailer.php");
 			}
 			$mail = new PHPMailer(TRUE); // the true param means it will throw exceptions on errors, which we need to catch
 			
-			// Kevin fill out the rest here
-			
-			if(is_array($from)) {
-				$mail->SetFrom($from[1], $from[0]);
-			} else {
-				$mail->SetFrom($from);
+			if(is_array($options['smtp'])) { // legacy, do not use.
+				$mail->IsSMTP();
+				$mail->SMTPAuth = true;
+				$mail->Host = $options['smtp']['host'];
+				$mail->Port = $options['smtp']['port'];
+				$mail->Username = $options['smtp']['username'];
+				$mail->Password = $options['smtp']['password'];
+				if($options['smtp']['debug']) $mail->SMTPDebug = 2;
+				$mail->SMTPSecure = $options['smtp']['secure'];
+
+			} elseif(is_array(settings("smtp"))) {
+				$mail->IsSMTP();
+				$mail->SMTPAuth = true;													// Should always be true (we don't want to use an un-authenticated smtp server...)
+				$mail->Host = settings("smtp", "host");					// host
+				$mail->Port = settings("smtp", "port");					// port
+				$mail->Username = settings("smtp", "username");	// username
+				$mail->Password = settings("smtp", "password");	// Password
+				$mail->SMTPSecure = settings("smtp", "secure");	// ssl/tls
+				if(settings("smtp", "debug")) $mail->SMTPDebug = 2;
 			}
-			$mail->AddAddress($to);
+			if(settings("smtp", "from")) { // if we have a from address, use the from field to set the ReplyTo.
+				$mail->SetFrom(settings("smtp", "from"));
+				if(is_array($from)) {
+					$mail->AddReplyTo($from[1], $from[0]);
+				} else {
+					$mail->AddReplyTo($from);
+				}
+			} else {											// otherwise just use the from field and don't bother with the ReplyTo
+				if(is_array($from)) {
+					$mail->SetFrom($from[1], $from[0]);
+				} else {
+					$mail->SetFrom($from);
+				}
+			}
+			if(is_array($to)) {
+				foreach($to as $name => $recip) {
+					$mail->AddAddress($recip, $name);
+				}
+			} else {
+				$mail->AddAddress($to);
+			}
 			$mail->Subject = $subject;
 			$mail->MsgHTML($message);
 			
-			if(isset($options['bcc'])){
-				if(is_array($options['bcc'])) {
-					foreach($options as $bc) {
-						$mail->AddBCC($bc, '');
-					}
-				} else {
-					$mail->AddBCC($options['bcc'], "");
-				}
-			}
-			
-			if(isset($options['cc'])){
-				if(is_array($options['cc'])) {
-					foreach($options as $cc) {
-						$mail->AddCC($cc, '');
-					}
-				} else {
-					$mail->AddCC($options['cc'], "");
-				}
-			}
 			
 			if(isset($options['attachment'])) {
 				if(is_array($options['attachment'])) {
@@ -122,8 +134,15 @@
 					$mail->AddAttachment($options['attachment']);	
 				}
 			}
-			
-			return $mail->Send();
+
+			if(isset($options['cc'])) {
+				$mail->AddCC($options['cc']);
+			}
+			if(!$result = $mail->Send()) {
+				return "Mailer Error: " . $mail->ErrorInfo;
+			} else {
+				return $result;
+			}
 		}	
 	}
 ?>
