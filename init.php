@@ -12,8 +12,7 @@
 	 * Get the Request Protocol
 	 */
 	function protocol() {
-		$server_protocol = $_SERVER['SERVER_PROTOCOL'];
-		if(substr($server_protocol, 0, 5) == "HTTPS") {
+		if($_SERVER['HTTPS'] == 'on') {
 			$protocol = "https://";
 		} else {
 			$protocol = "http://";
