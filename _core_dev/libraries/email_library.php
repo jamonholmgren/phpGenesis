@@ -95,7 +95,7 @@
 			
 			if(isset($options['bcc'])){
 				if(is_array($options['bcc'])) {
-					foreach($options as $bc) {
+					foreach($options['bcc'] as $bc) {
 						$mail->AddBCC($bc, '');
 					}
 				} else {
@@ -105,7 +105,7 @@
 			
 			if(isset($options['cc'])){
 				if(is_array($options['cc'])) {
-					foreach($options as $cc) {
+					foreach($options['cc'] as $cc) {
 						$mail->AddCC($cc, '');
 					}
 				} else {
