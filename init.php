@@ -9,12 +9,25 @@
 	if($restrict_ip && !in_array($_SERVER['REMOTE_ADDR'], $allowed_ips)) die("Coming soon!");
 	
 	/**
+	 * Get the Request Protocol
+	 */
+	function protocol() {
+		$server_protocol = $_SERVER['SERVER_PROTOCOL'];
+		if(substr($server_protocol, 0, 5) == "HTTPS") {
+			$protocol = "https://";
+		} else {
+			$protocol = "http://";
+		}
+		return $protocol;
+	}
+
+	/**
 	 * Configure initial directories and URLs
 	 */
 	define("MAIN_FOLDER", dirname(__FILE__));	// No trailing slash
 	define("BASE_FOLDER", MAIN_FOLDER);
 	define("CONFIG_FOLDER", MAIN_FOLDER . "/config");
-	define('BASE_URL', "http://" . $_SERVER['HTTP_HOST']); // Do not use a trailing slash
+	define('BASE_URL', protocol() . $_SERVER['HTTP_HOST']); // Do not use a trailing slash
 	define('APP_URL', BASE_URL . "/app");
 	define('UPLOADS_URL', BASE_URL . "/uploads");
 	
