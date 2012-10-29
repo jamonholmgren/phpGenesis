@@ -300,7 +300,13 @@
 	if(!function_exists("db_update_field")) {
 		function db_update_field($table, $where, $field, $value) {
 			db_init();
-			if(is_int($where)) $where = "WHERE id = {$where}";
+			if(is_int($where)) { 
+				$where = "WHERE id = {$where}";
+			} elseif($where) {
+			} else {
+				die("db_update_field requires a valid 'where' value. You supplied nothing.");
+			}
+			
 			if($value != "NULL" && $value !== NULL) $value = "'" . db_escape_string(stripslashes($value)) . "'";
 			$q = _db_log_query("UPDATE {$table} SET {$field} = {$value} {$where} ");
 			$result = mysql_query($q);
