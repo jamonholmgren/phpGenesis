@@ -48,11 +48,7 @@
 	define('APP_ID', "change-this-id-to-some-random-string");
 
 
-	if(dev()) {
-		define('CORE_FOLDER', MAIN_FOLDER . "/_core_dev"); // For csd_sites "/../dev.phpgenesis.com/_core_x.x.x"
-	} else {
-		define('CORE_FOLDER', MAIN_FOLDER . "/_core_2.4.2"); // For csd_sites "/../dev.phpgenesis.com/_core_x.x.x"
-	}
+	define('CORE_FOLDER', MAIN_FOLDER . "/_core");
 	
 	/**
 	 * Define Application Environment
