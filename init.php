@@ -1,12 +1,19 @@
 <?
+	
 	/**
-	 * Restricts IP addresses. 
+	 * Check if site is on internal domain
 	 */
-	$restrict_ip = false;	 // Set it to false to disable IP restriction
-	$allowed_ips = array(
-		"xxx.xxx.xxx.xxx",
-	);
-	if($restrict_ip && !in_array($_SERVER['REMOTE_ADDR'], $allowed_ips)) die("Coming soon!");
+	if(!function_exists("dev")) {
+		function dev() {
+			return (strpos(BASE_URL, ".int.") !== FALSE || strpos(BASE_URL, ".site") !== false); // checks the URL to see if ".int." is contained. You can check server IP, BASE_FOLDER, whatever.
+		}
+	}
+
+	/**
+	 * Configure initial directories and URLs
+	 */
+	define("MAIN_FOLDER", dirname(__FILE__));	// Path to app and core folders here - no trailing slash
+	define("BASE_FOLDER", MAIN_FOLDER);
 	
 	/**
 	 * Get the Request Protocol
@@ -19,34 +26,33 @@
 		}
 		return $protocol;
 	}
+	
+	
+	/**
+	 * Restricts IP addresses. 
+	 */
+	$restrict_ip = false;	 // Set it to false to disable IP restriction
+	$allowed_ips = array(
+		"xxx.xxx.xxx.xxx",
+	);
+	if($restrict_ip && !in_array($_SERVER['REMOTE_ADDR'], $allowed_ips)) die("Coming soon!");
 
-	/**
-	 * Configure initial directories and URLs
-	 */
-	define("MAIN_FOLDER", dirname(__FILE__));	// No trailing slash
-	define("BASE_FOLDER", MAIN_FOLDER);
-	define("CONFIG_FOLDER", MAIN_FOLDER . "/config");
-	define('BASE_URL', protocol() . $_SERVER['HTTP_HOST']); // Do not use a trailing slash
-	define('APP_URL', BASE_URL . "/app");
-	define('UPLOADS_URL', BASE_URL . "/uploads");
-	
-	/**
-	 * Check if site is on internal domain
-	 */
-	function dev() {
-		return (strpos(BASE_URL, ".int.") !== FALSE); // checks the URL to see if ".int." is contained. You can check server IP, BASE_FOLDER, whatever.
-	}
-	
-	if(dev()) {
-		define('CORE_FOLDER', MAIN_FOLDER . "/../dev.phpgenesis.com/_core_dev"); // For csd_sites "/../dev.phpgenesis.com/_core_x.x.x"
-	} else {
-		define('CORE_FOLDER', MAIN_FOLDER . "/../dev.phpgenesis.com/_core_2.4.0"); // For csd_sites "/../dev.phpgenesis.com/_core_x.x.x"
-	}
 	define("PLUGINS_FOLDER", MAIN_FOLDER . "/_plugins"); // If you don't have app-specific plugins use "/../dev.phpgenesis.com/_plugins
 	define('APP_FOLDER', MAIN_FOLDER . "/app");
-	define('UPLOADS_FOLDER', BASE_FOLDER . "/uploads");
+	define('UPLOADS_FOLDER', MAIN_FOLDER . "/uploads");	
+	define('CONFIG_FOLDER', MAIN_FOLDER . "/config");
 	
-	define('APP_ID', "changetorandomstring");
+	define('BASE_URL', "http://" . $_SERVER['HTTP_HOST']); // Do not use a trailing slash
+	define('APP_URL', BASE_URL . "/app");
+	define('UPLOADS_URL', BASE_URL . "/uploads");
+	define('APP_ID', "change-this-id-to-some-random-string");
+
+
+	if(dev()) {
+		define('CORE_FOLDER', MAIN_FOLDER . "/_core_dev"); // For csd_sites "/../dev.phpgenesis.com/_core_x.x.x"
+	} else {
+		define('CORE_FOLDER', MAIN_FOLDER . "/_core_2.4.2"); // For csd_sites "/../dev.phpgenesis.com/_core_x.x.x"
+	}
 	
 	/**
 	 * Define Application Environment
@@ -54,7 +60,7 @@
 	 *
 	 * development = strict, testing = warnings only, production = none, maintenance = redirects to a maintenance page
 	 */
-	define('APP_STATUS', 'testing');	
+	define('APP_STATUS', 'development');	
 	
 	/**
 	 * Date/Time Settings
@@ -73,4 +79,5 @@
 	define('EMAIL', "test@clearsightstudio.com");	
 	
 	
+
 ?>

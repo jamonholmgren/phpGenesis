@@ -12,17 +12,17 @@
 
 	// phpGenesis core version.
 	include(CORE_FOLDER . "/core_version.php");
-	
+
 	ob_start();
 	
 	// all the magic here
 	define("CORE_LOADED", true);
-	
+
 	// Change site behavior based on the application's status
 	$route_to_maintenance = false;
 	switch (APP_STATUS) {
 		case 'development':
-			error_reporting(E_ALL | E_STRICT);
+			error_reporting(E_ALL & ~E_NOTICE);
 			ini_set('display_errors','On');
 			break;
 		case 'testing':

@@ -96,6 +96,7 @@
 						$tmp = $tmp . "/" . ltrim($segments[$j], "_");
 					}
 				}
+
 				
 				$filename = APP_FOLDER . '/pages' . $tmp;
 				

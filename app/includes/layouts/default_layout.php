@@ -10,7 +10,7 @@
 		<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 		<link rel="shortcut icon" href="/favicon.ico">
 		<?=canonical()?>
-		
+
 		<? register_css("style-reset", "style/reset.css", "all", 1); ?>
 		<? register_css("style", "style/style.css", "all", 2); ?>
 		<? // optional handheld stylesheet // register_css("style-handheld", "style/handheld.css", "all", 3); ?>

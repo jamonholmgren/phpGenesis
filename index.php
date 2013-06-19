@@ -1,6 +1,8 @@
 <?php
 	// Don't modify this file
 	require("init.php"); // Load initial definitions, such as where the core and app folders are.
+
+
 	if(file_exists(CORE_FOLDER . "/core.php")) {
 		require(CORE_FOLDER . "/core.php"); // start the core
 	} else {
