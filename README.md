@@ -1,7 +1,7 @@
 phpGenesis
 ==========
 
-A lightweight, powerful, scalable web framework. Uses phpActiveRecord, dBug, and many more popular open source libraries.
+A lightweight php framework featuring layouts, automatic routing, pretty urls, phpActiveRecord integration and more.
 
 Getting Started
 ---------------
@@ -11,15 +11,6 @@ Getting Started
 3. Upload your site, and visit it. You should get the default home page. (Located in app/pages/home.php)
 4. Congrats, you have completed your first phpGenesis setup!
 
-Layouts
--------
-
-TODO: Fill this out.
-
-Plugins
--------
-
-TODO: Fill this out, w/ links to their respective wikis.
 
 Authors
 -------
