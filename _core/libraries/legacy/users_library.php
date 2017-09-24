@@ -4,11 +4,7 @@
  *	
  *	Currently used for everything related to users. Will be superseded by user_library (NOTICE: not plural) when we create an ActiveRecord version.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *	
  *	@todo Rebuild this library as user_library using ActiveRecord
  * @package phpGenesis

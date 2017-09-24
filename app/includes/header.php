@@ -29,6 +29,5 @@
 	<body id="body-<?=$body_id?>" class="body-<?=$body_class?>"> <!--<![endif]-->
 		<div id="container">
 			<header>
-				<!-- Probably won't work in Internet Explorer - probably change to just a div -->
 			</header>
 			<div id="main">

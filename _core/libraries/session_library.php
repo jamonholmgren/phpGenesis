@@ -4,11 +4,7 @@
  *	
  *	Everything you'll need to work with a server-side session. If this library is not working verify you are following this rule: The BASE_URL must be set to an actual URL prefix and not left blank. BASE_URL cannot end in a slash.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *	
  *	@todo Document this library
  * @package phpGenesis

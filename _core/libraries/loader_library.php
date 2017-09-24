@@ -4,11 +4,7 @@
  *	
  *	This library is loaded manually by the core to make includes and loading libraries a breeze.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *
  * @package phpGenesis
  */

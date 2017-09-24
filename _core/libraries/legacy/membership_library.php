@@ -4,11 +4,7 @@
  *	
  *	This library is depricated. Please use the "users" library for all future development This documentation is for debugging old code ONLY
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *	
  * @package phpGenesis
  */

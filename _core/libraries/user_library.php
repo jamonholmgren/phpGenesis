@@ -6,11 +6,7 @@
 	 *	
 	 *	Not meant to be used in this form. Create a User model that extends UserLibrary and then go from there.
 	 *	
-	 *	phpGenesis Copyright (c) 2011. All Rights Reserved.
-	 *	
-	 *	phpGenesis by Jamon Holmgren and Tim Santeford
-	 *	
-	 *	Maintained by ClearSight Studio
+   *	phpGenesis by Jamon Holmgren and Tim Santeford
 	 *	
 	 *	@todo 
 	 * 	@package phpGenesis

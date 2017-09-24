@@ -4,11 +4,7 @@
  *	
  *	Use instead of PHP's default mail function for HTML formatting.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *	
  *	@todo Plain text/html versions
  *	@todo More email options

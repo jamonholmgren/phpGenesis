@@ -4,11 +4,7 @@
  *	
  *	Advanced user permissions functions.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *	
  *	@todo Convert to ActiveRecord
  * @package phpGenesis

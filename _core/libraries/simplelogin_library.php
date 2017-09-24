@@ -4,11 +4,7 @@
  *	
  *	Quick and dirty plaintext user/pass login system.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *	
  *	@todo Document this library
  * @package phpGenesis

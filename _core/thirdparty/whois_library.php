@@ -4,11 +4,7 @@
  *	
  *	Gathers and displays information about a given domain and it's owner.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *	
  *	@todo Change to use thirdparty library loader
  * @package phpGenesis

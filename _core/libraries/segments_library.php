@@ -4,11 +4,7 @@
  *	
  *	This library probably should have been called URL_library. These functions are useful for checking various parts of the URL after the TLD
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *
  * @package phpGenesis
  */

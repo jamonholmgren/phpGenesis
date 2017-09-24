@@ -19,3 +19,8 @@ Jamon Holmgren, Owner/Founder at [ClearSight Studio](http://clearsightstudio.com
   jamon@clearsightstudio.com
 
 Tim Santeford
+
+License
+-------
+
+MIT (See `./LICENSE`)

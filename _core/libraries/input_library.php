@@ -4,11 +4,7 @@
  *	
  *	Critical functions for form_library and core_library.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *
  * @package phpGenesis
  */

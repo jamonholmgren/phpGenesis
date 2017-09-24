@@ -4,11 +4,7 @@
  *	
  *	Advanced functions that parse _db_log to undo last SQL query(s). Only works with db_library at this time. See function documentation for details.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *	
  *	@todo Convert to ActiveRecord
  * @package phpGenesis

@@ -4,11 +4,7 @@
  *	
  *	Used for interaction with the database. Make sure your database connection info is setup in config.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *
  * @package phpGenesis
  */

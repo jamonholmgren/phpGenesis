@@ -4,11 +4,7 @@
  *	
  *	These functions are used almost exclusively in the core and /app/includes/header.php
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *	
  *	@todo add function_exists() lines
  * @package phpGenesis

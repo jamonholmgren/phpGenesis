@@ -4,11 +4,7 @@
  *	
  *	Provides functions to help prevent CSRF (seasurf) attacks. Prerequisites: session_library. If users_library is loaded, uses the current user_id() also.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *
  * @package phpGenesis
  */

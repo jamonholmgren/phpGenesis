@@ -4,11 +4,7 @@
 	 *	
 	 *	Everything you will ever need to login a user via Janrain Engage
 	 *	
-	 *	phpGenesis Copyright (c) 2011. All Rights Reserved.
-	 *	
-	 *	phpGenesis by Jamon Holmgren and Tim Santeford
-	 *	
-	 *	Maintained by ClearSight Studio
+   *	phpGenesis by Jamon Holmgren and Tim Santeford
 	 *
 	 * @package phpGenesis
 	 */

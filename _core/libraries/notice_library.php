@@ -4,11 +4,7 @@
  *	
  *	Stores and returns notices. Useful in conjunction with the form_library to give users feedback through error/success messages.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *
  * @package phpGenesis
  */

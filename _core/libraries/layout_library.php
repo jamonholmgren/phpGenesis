@@ -4,11 +4,7 @@
  *	
  *	layout_library.php allows you to use layouts that are contained in APP_FOLDER/includes/layouts/.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *
  * @package phpGenesis
  */

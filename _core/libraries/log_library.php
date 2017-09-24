@@ -4,11 +4,7 @@
  *	
  *	Currently not used. db_library has built-in logging, but future logging functions will be located here.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *	
  *	@todo This library is for future use. Currently, db_library has built-in logging, but nothing else does.
  * @package phpGenesis

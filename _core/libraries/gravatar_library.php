@@ -4,12 +4,8 @@
  *	
  *	Miscellaneous, but very useful, functions. No phpGenesis-dependent functions are allowed in this library.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
- *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
- *
+  *	phpGenesis by Jamon Holmgren and Tim Santeford
+*
  * @package phpGenesis
  */
 	

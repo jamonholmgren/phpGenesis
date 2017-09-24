@@ -4,11 +4,7 @@
  *	
  *	This library is useful for monitoring memory usage while running phpGenesis. This was used for a short time in core_library, but is now only used when performance issues arrise.
  *	
- *	phpGenesis Copyright (c) 2011. All Rights Reserved.
- *	
  *	phpGenesis by Jamon Holmgren and Tim Santeford
- *	
- *	Maintained by ClearSight Studio
  *	
  *	@todo Use a debug_email global/config setting instead of memory+monitor@phpgenesis.com
  * @package phpGenesis
