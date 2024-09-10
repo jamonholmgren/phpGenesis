@@ -15,8 +15,7 @@ Getting Started
 Authors
 -------
 
-Jamon Holmgren, Owner/Founder at [ClearSight Studio](http://clearsightstudio.com)
-  jamon@clearsightstudio.com
+Jamon Holmgren, CTO at [Infinite Red](https://infinite.red).
 
 Tim Santeford
 
